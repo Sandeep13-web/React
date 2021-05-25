@@ -13,13 +13,21 @@
     font-size: 22px;
     font-weight: 900;
 }
+.left_area h2{
+    color: #fff;
+    margin:0;
+    text-transform: inherit;
+    font-size:15px;
+    text-align: center;
+    margin-top: -15px;
+}
 
 .left_area span{
     color: #1DC4E7;
 
 }
 
-.logout_btn{
+button{
     padding: 5px;
     background : #19B3D3;
     text-decoration :none;
@@ -30,4 +38,5 @@
     font-size: 15px;
     font-weight: 600;
     color:#fff;
+    border:#19B3D3 ;
 }

@@ -9,3 +9,26 @@
     padding: 20px;
     font-weight: 600;
 }
+
+.main_area h2{
+    color: #357EC7;
+    font-size : 15px;
+    margin-top: 10px;
+    float: right;
+    margin-right: 815px;
+    padding: 20px;
+    
+}
+.btn{
+    padding: 5px;
+    background : #19B3D3;
+    text-decoration :none;
+    float: right;
+    margin-top:10px;
+    margin-right: 1100px;
+    border-radius : 2px;
+    font-size: 15px;
+    font-weight: 600;
+    color:#fff;
+    border:#19B3D3 ;
+}
