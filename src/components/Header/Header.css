@@ -16,6 +16,14 @@
     font-size: 22px;
     font-weight: 900;
 }
+
+.left_area h4{
+    color :#fff;
+    margin-right : 10px;
+    padding-left: 250px;
+    display: flex;
+    justify-content: space-between;
+}
 .left_area h2{
     color: #fff;
     margin:0;
