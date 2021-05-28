@@ -1,5 +1,5 @@
 import React from 'react'
-import{Link, NavLink} from 'react-router-dom';
+import{NavLink} from 'react-router-dom';
 import axios from 'axios';
 import {useState, useEffect} from 'react';
 
@@ -23,17 +23,17 @@ function AllCards() {
           getData();
       }, [])
     return (
-        <div class ="allCards">
+        <div className="allCards">
             <div className="list">
-                <div class="row w-100">
+                <div className="row w-100">
                 {data.splice(0,4).map((data,index)=>
-                    <div class="col-md-6" key={index}>
-                        <div class="card" >
-                        {/* <img src="..." class="card-img-top" alt="..." /> */}
-                        <div class="card-body">
-                            <h5 class="card-title">{data.title}</h5>
-                            <p class="card-text">{data.body}</p>
-                            <NavLink to={`/cards/${data.id}`} class = "btn btn-primary">View Data</NavLink>
+                    <div className="col-md-6" key={index}>
+                        <div className="card" >
+                        {/* <img src="..." className="card-img-top" alt="..." /> */}
+                        <div className="card-body">
+                            <h5 className="card-title">{data.title}</h5>
+                            <p className="card-text">{data.body}</p>
+                            <NavLink to={`/cards/${data.id}`} className= "btn btn-primary">View Data</NavLink>
                         </div>
                         </div>
                     </div>

@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-import{useParams, NavLink} from 'react-router-dom';
+import{useParams} from 'react-router-dom';
 import {useState, useEffect} from 'react'
 
 function SingleCard() {
@@ -20,19 +20,19 @@ function SingleCard() {
     
       useEffect(() => {
           getData(params.id);
-      }, [])
+      }, [params.id])
+
     return (
-        
-        <div class ="singleCard">
+        <div className="singleCard">
             <div className="list">
-                <div class="row w-100">
-                    <div class="col-md-6">
-                        <div class="card" >
-                        {/* <img src="..." class="card-img-top" alt="..." /> */}
-                        <div class="card-body">
-                            <h5 class="card-title">{data.title}</h5>
-                            <p class="card-text">{data.body}</p>
-                            <button class="btn btn-primary">{params.id}</button>
+                <div className="row w-100">
+                    <div className="col-md-6">
+                        <div className="card" >
+                        {/* <img src="..." className="card-img-top" alt="..." /> */}
+                        <div className="card-body">
+                            <h5 className="card-title">{data.title}</h5>
+                            <p className="card-text">{data.body}</p>
+                            <button className="btn btn-primary">{params.id}</button>
                         </div>
                         </div>
                     </div>
