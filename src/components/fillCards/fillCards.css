@@ -1,0 +1,10 @@
+.fillcards h2{    
+    color: #357EC7;
+    /* font-size: 30px; */
+    font-weight: 600
+}
+
+.Buttons{
+    display: flex;
+    justify-content: space-between;
+}

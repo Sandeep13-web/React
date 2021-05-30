@@ -24,7 +24,8 @@ function SingleCard() {
 
     return (
         <div className="singleCard">
-            <div className="list">
+            <h3>Single Card Information</h3>
+            <div className="listS">
                 <div className="row w-100">
                     <div className="col-md-6">
                         <div className="card" >

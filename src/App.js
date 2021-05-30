@@ -12,6 +12,8 @@ import SingleCard from "./components/singleCard/singleCard";
 import './components/singleCard/singleCard.css';
 import Form from './components/form/form';
 import './components/form/form.css';
+import FillCards from './components/fillCards/fillCards';
+import './components/fillCards/fillCards.css';
 import {Route ,Switch} from 'react-router-dom';
 
 
@@ -43,6 +45,7 @@ function App() {
           <Route path="/cards" component ={AllCards} exact/>
           <Route path="/cards/:id" component ={SingleCard} exact/>
           <Route path = "/forms" component ={Form} exact />
+          <Route path = "/fillCards" component= {FillCards} exact />
 
           <Route path ="**" render ={()=> {<h4>Page not found</h4>}} exact/>
 

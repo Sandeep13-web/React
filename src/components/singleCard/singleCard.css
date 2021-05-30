@@ -1,6 +1,14 @@
 
-.list {
+.listS {
     padding-left: 250px;
-    margin-top:80px;
+    margin-top:30px;
     position: fixed;
+  }
+
+  .singleCard h3{
+    padding-left: 250px;
+    margin-top: 80px;
+    color: #357EC7;
+    font-size: 30px;
+    font-weight: 600
   }

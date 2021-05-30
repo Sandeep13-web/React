@@ -20,6 +20,8 @@ export default function RightNav() {
             <NavLink to ="/cards">AllCards</NavLink>
             {/* <NavLink to ="**">Card Profile</NavLink> */}
             <NavLink to ="/forms">Form Section</NavLink>
+            <NavLink to ="/fillCards">Fill Cards</NavLink>
+
         </div>
     )
 }

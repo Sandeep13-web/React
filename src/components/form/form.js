@@ -1,52 +1,68 @@
 import React , {useState} from 'react'
 
 function Form() {
-    const [username , setUsername] = useState({
+    const [userID , setUserID] = useState({
         value : "",
         hasError : false,
         error : "",
     });
-    const [password , setPassword] = useState({
+    const [title , setTitle] = useState({
         value : "",
         hasError : false,
         error : "",
     });
 
+    const [body , setBody] = useState({
+      value : "",
+      hasError: false,
+      error : "",  
+    })
+    
 
-    const userNameChangeHandler = (e)=> {
-        setUsername({value:e.target.value, hasError: false , error: ""});
+
+    const userIDChangeHandler = (e)=> {
+        setUserID({value:e.target.value, hasError: false , error: ""});
     }
 
-    const passwordChangeHandler = (e)=> {
-        setPassword({value:e.target.value, hasError: false , error: ""});
+    const titleChangeHandler = (e)=> {
+        setTitle({value:e.target.value, hasError: false , error: ""});
     }
 
+    const bodyChangeHandler = (e)=> {
+        setBody({value: e.target.value, hasError: false , error: ""});
+    }
 
     const submitForm = (e) =>{
         e.preventDefault();
-        let userNameError = false;
-        let passwordError = false;
+        let userIDError = false;
+        let titleError = false;
+        let bodyError = false;
 
-        if (username.value.length === 0){
-            userNameError = true;
+        if (userID.value.length === 0){
+            userIDError = true;
         }
-        if(password.value.length === 0){
-            passwordError = true;
+        if(title.value.length === 0){
+            titleError = true;
         }
 
-        if(userNameError || passwordError){
-            setUsername({
-                ...username,
-                hasError : userNameError,
-                error: "Username field is empty",
+        if(userIDError || titleError){
+            setUserID({
+                ...userID,
+                hasError : userIDError,
+                error: "User ID field is empty",
             })
-            setPassword({
-                ...password,
-                hasError : passwordError,
-                error: "Password field is empty",
+            setTitle({
+                ...title,
+                hasError : titleError,
+                error: "Title field is empty",
+            })
+            setBody({
+                ...body,
+                hasError: bodyError,
+                error: "Body field is empty",
             })
         }else{
-            console.log("Form submission successfull!!");
+            console.log("Card submission successfull!!");
         }
 
     }
@@ -54,32 +70,47 @@ function Form() {
         <div className="form">
                 <div className= "container">
                     <form>
+                        <h1>Sign up</h1>
+                        <div id="emailHelp" className="form-text">Want to fill out a form.</div>
+                        <br />
                         <div className="mb-3">
-                            <label for="exampleInputEmail1" className="form-label">UserName</label>
+                            <label for="exampleInputEmail1" className="form-label">User ID</label>
                             <input className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" 
-                                value = {username.value}
+                                value = {userID.value}
                                 type = "text"
-                                onChange = {userNameChangeHandler} />
-                            <div className="alert alert-warning" role="alert">
-                                {username.hasError && username.error}
-                            </div>
-                            <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
+                                onChange = {userIDChangeHandler} />
+                            {userID.hasError && <div className="alert alert-warning" role="alert">
+                                { userID.error}
+                            </div>} 
                         </div>
                         <div className="mb-3">
-                            <label for="exampleInputPassword1" className="form-label">Password</label>
+                            <label for="exampleInputPassword1" className="form-label">Title</label>
                             <input className="form-control" id="exampleInputPassword1" 
-                                value = {password.value}
-                                type = "password"
-                                onChange = {passwordChangeHandler}
+                                value = {title.value}
+                                type = "text"
+                                onChange = {titleChangeHandler}
                             />
-                            <div className="alert alert-warning" role="alert">
-                                {password.hasError && password.error}
-                            </div>
+                            {body.hasError && <div className="alert alert-warning" role="alert">
+                                {body.error}
+                                </div>
+                            }
                         </div>
-                        <div className="mb-3 form-check">
+                        <div className="mb-3">
+                            <label for="exampleInputText1" className="form-label">Body</label>
+                            <input className="form-control" id="exampleInputPassword1" 
+                                value = {body.value}
+                                type = "text"
+                                onChange = {bodyChangeHandler}
+                            />
+                            {body.hasError && <div className="alert alert-warning" role="alert">
+                                {body.error}
+                                </div>
+                            }
+                        </div>
+                        {/* <div className="mb-3 form-check">
                             <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-                            <label className="form-check-label" for="exampleCheck1">Check me out</label>
-                        </div>
+                            <label className="form-check-label" for="exampleCheck1">I accept the terms and conditions</label>
+                        </div> */}
                         <button type="submit" className="btn btn-primary" onClick = {submitForm}>Submit</button>
                     </form>
                 </div>

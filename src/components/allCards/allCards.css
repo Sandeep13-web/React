@@ -1,8 +1,25 @@
 .list {
     padding-left: 250px;
-    margin-top:80px;
+    margin-top: 30px;
     position: fixed;
   }
   .card{
       margin-bottom: 25px;
+  }
+ 
+  .btns{
+      display: flex;
+      justify-content: space-between;
+  }
+
+  .btn.btn-danger{
+      background: #F62217;
+  }
+
+  .allCards h3{
+    padding-left: 250px;
+    margin-top: 80px;
+    color: #357EC7;
+    font-size: 30px;
+    font-weight: 600
   }

@@ -1,5 +1,10 @@
 .container{
     padding-left: 250px;
     margin-top: 80px;
-    position: fixed;
+}
+.container h1{
+    color :#357EC7;
+    font-size: 35px;
+    font-weight: 200;
+    font-weight: 600; 
 }
