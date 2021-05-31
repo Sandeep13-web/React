@@ -1,62 +1,45 @@
 // import logo from './logo.svg';
-import './App.css';
-import Header from './components/Header/Header';
-import './components/Header/Header.css';
-import Body from './components/Body/Body';
-import './components/Body/body.css';
-import RightNav from './components/LeftNav/LeftNav';
-import './components/LeftNav/LeftNav.css';
-import AllCards from './components/allCards/allCards';
-import './components/allCards/allCards.css';
-import SingleCard from "./components/singleCard/singleCard";
-import './components/singleCard/singleCard.css';
-import Form from './components/form/form';
-import './components/form/form.css';
-import FillCards from './components/fillCards/fillCards';
-import './components/fillCards/fillCards.css';
+import './App.css';     
+import Login from './components/login/login';
+import './components/login/login.css';
+import Routes from './routes'
 import {Route ,Switch} from 'react-router-dom';
+import { useState ,useEffect } from 'react';
 
 
 function App() {
 
-  // const [name , setName] = useState("Sandeep");
- 
-  // const [days , setDay] = useState("3")
-  //       const buttonClick=() =>{  
-  //         setName("John");
-  //         setDay("7")
-  //       }
-  
-  // const changeNameHandler =(e)=>{
-  //   setName(e.target.value);
-  // }
+  const [isAuth, setisAuth] = useState(false);
+
+  useEffect(() => {
+    if(localStorage.getItem("token")){
+      setisAuth(true);
+    }
+  }, [])
+
+  const authenticate = () =>{
+    setisAuth(true);
+    localStorage.setItem("token" , "12asd5as4dasdas3da2sd65we4sad");
+  }
+
+  const logOut= () => {
+      setisAuth(false);
+      localStorage.removeItem("token");
+  }
   
   return (
-    <div>
-        {/* <Header click = {buttonClick}/> */}
-        <Header />
-        <>
-          {/* <Body name={name} days = {days}  click ={buttonClick} onChange={changeNameHandler} /> */}
-        </>
-       
-
         <Switch>
-          <Route path="/" component ={Body} exact/>
-          <Route path="/cards" component ={AllCards} exact/>
-          <Route path="/cards/:id" component ={SingleCard} exact/>
-          <Route path = "/forms" component ={Form} exact />
-          <Route path = "/fillCards" component= {FillCards} exact />
-
-          <Route path ="**" render ={()=> {<h4>Page not found</h4>}} exact/>
-
-
+          
+          <Route path="/login" exact>
+            <Login authenticate = {authenticate} isAuth={isAuth}  />
+          </Route>
+          
+          <Route component={Routes}>
+            <Routes logOut={logOut} isAuth={isAuth} />
+          </Route>
+          
         </Switch>
-        
-        <RightNav />
-
-        
-    </div>
-    
+      
   );
 }
 
