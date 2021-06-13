@@ -14,7 +14,8 @@ import RightNav from './components/LeftNav/LeftNav';
 import './components/LeftNav/LeftNav.css';
 import Header from './components/Header/Header';
 import './components/Header/Header.css';
-
+import Test from './components/test';
+import User from './components/user';
 function Routes({isAuth , logOut}) {
     
     if(!isAuth){
@@ -30,6 +31,9 @@ function Routes({isAuth , logOut}) {
                 <Route path="/cards/:id" component ={SingleCard} exact/>
                 <Route path = "/forms" component ={Form} exact />
                 <Route path = "/fillCards" component= {FillCards} exact />
+                <Route path ="/test" component ={Test} exact />
+                <Route path ="/user" component ={User} exact />
+
             </Switch>
 
             <RightNav />

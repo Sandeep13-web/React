@@ -21,7 +21,7 @@ export default function RightNav() {
             {/* <NavLink to ="**">Card Profile</NavLink> */}
             <NavLink to ="/forms">Form Section</NavLink>
             <NavLink to ="/fillCards">Fill Cards</NavLink>
-
+            <NavLink to ="/user">User</NavLink>
         </div>
     )
 }

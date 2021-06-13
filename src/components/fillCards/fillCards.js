@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
 
 function FillCards() {
 
@@ -19,11 +20,8 @@ function FillCards() {
         setCardList(newCardList);
         setTitle("");
         setBody("");
+        getData(title, body);
     }
-
-    console.log(title);
-    console.log(body);
-    console.log(cardList);
 
     const deleteCardHandler = (index) => {
         let newCardList = [...cardList];
@@ -44,8 +42,17 @@ function FillCards() {
         setCardList(newCardList);
         setTitle("");
         setBody("");
+        setSelectedIndex(null);
     }
 
+    
+    const getData = async(mainTitle , mainBody) => {
+        console.log(mainTitle, mainBody);
+        const data = {title: mainTitle , body: mainBody}
+        const putData = await axios.post('https://jsonplaceholder.typicode.com/todos' , data);
+        console.log(putData);
+    }
+    
     return (
         <div className="fillcards">
             <div className="fillUpCards">
